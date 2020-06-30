@@ -3,11 +3,11 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 .login {
-    background-image: url("../images/background6.jpg"); 
+    background-image: url("../Images/background6.jpg"); 
     background-size: cover;
 }
 .registrar {
-    background-image: url("../images/background3.jpg"); 
+    background-image: url("../Images/background3.jpg"); 
     background-size: cover;
 }
 .container {
