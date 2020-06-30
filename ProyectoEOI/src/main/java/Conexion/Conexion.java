@@ -53,4 +53,60 @@ public class Conexion {
         
             
     }
+public Usuario consultarLogin(String nombre, String passw) throws SQLException {
+	    Connection con=null;
+
+	    Usuario user=null;
+	    String quary="SELECT rol FROM user WHERE nombre=? and pass=?";
+	    con=getConnection();
+	    PreparedStatement statement = con.prepareStatement(quary);
+            statement.setString(1, nombre);
+            statement.setString(2, passw);
+	    ResultSet rs = statement.executeQuery();
+
+	    while (rs.next()) {
+	    	user=new Usuario(rs.getInt("rol"));
+              
+                System.out.println("el rol de este usuario es: "+user);
+	         
+	    }     
+		return user;
+	}
+     
+     
+     
+      public boolean registrarProducto(Producto producto) {
+	String insertQuery = "INSERT INTO producto(producto,descripcion, precio, categoria, marca,  modelo,stock,referencia,descuento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	Connection con = null;
+	PreparedStatement stmt = null;
+	int rows = 0;
+            try {
+                con = getConnection();
+                stmt = con.prepareStatement(insertQuery);
+		stmt.setString(1, producto.getProducto());
+                stmt.setString(2, producto.getDescripcion());
+                stmt.setDouble(3, producto.getPrecio());
+                stmt.setInt(4, producto.getCategoria());
+                stmt.setString(5,producto.getMarca());
+                stmt.setString(6,producto.getModelo());
+                stmt.setInt(7,producto.getStock());
+                stmt.setString(8,producto.getReferencia());
+                stmt.setDouble(9,producto.getDescuento());
+                System.out.println("Ejecutando la query: " + insertQuery);
+				
+		rows = stmt.executeUpdate();
+                System.out.println("Registros afectados: " + rows);
+				
+		stmt.close();
+                con.close();
+				
+		return true;
+				
+				
+	    } catch (SQLException e) {
+		return false;
+        }
+        
+            
+    }
 }
