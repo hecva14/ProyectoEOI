@@ -8,6 +8,21 @@
     <title>REGISTRO</title>
 </head>
 <body class="registrar">
+    <header class="header">
+            <nav class="navegador">
+                <div class="ropa">
+                    <ul class="uluno">
+                    <li class="liuno"><a href="index.html">Inicio</a></li>
+                    <li class="liuno"><a href="#">Hombre</a></li>
+                    <li class="liuno"><a href="#">Mujer</a></li>
+                    <li class="liuno"><a href="kids.html">Niños</a></li>
+                    <li class="liuno"><a href="#">Contacto</a></li>
+                    <li class="lidos"><a href="login.html">LOG IN</a></li>
+                    <li class="litres"><a href="registrar.html">Registrarse</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
     <div class="container">
         <div class="forma_top">
             <h2><span>Registro</span></h2>
@@ -23,9 +38,13 @@
             Contraseña" required>   
             <input class="input" type="text" placeholder="&#8962;
             Direccion" required>
+            <select class="input" name="Rol">
+            <option value="seleccionar">--Seleccionar--</option>
+            <option value="usuario">Usuario</option>
+            <option value="admin">Admin</option>
             <a class="hyper" href="login.html">Iniciar Sesion</a>
             <div class="boton_formulario">
-                <input class="boton_submit" type="submit" type="submit" value="REGISTRAR">
+            <input class="boton_submit" type="submit" type="submit" value="REGISTRAR">
             </div>              
         </form>
     </div>
