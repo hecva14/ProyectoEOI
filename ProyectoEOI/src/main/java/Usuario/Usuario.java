@@ -6,18 +6,19 @@ public class Usuario {
     private String Email;
     private int Telefono;
     private int Telefono2;
+    private int Rol;
 	
     public Usuario() {
 		
 	}
     
-	public Usuario(String usuario, String password, String email, int telefono, int telefono2) {
+	public Usuario(String usuario, String password, String email, int telefono, int telefono2, int rol) {
 		Usuario = usuario;
 		Password = password;
 		Email = email;
 		Telefono = telefono;
                 Telefono2 = telefono2;
-                
+                Rol = rol;
 	}
 
 	public String getUsuario(){
@@ -52,12 +53,20 @@ public class Usuario {
             Telefono = telefono;
         }
         
-           public int getTelefono2(){
+        public int getTelefono2(){
             return Telefono2;
         }
         
         public void setTelefono2(int telefono2){
             Telefono2 = telefono2;
+        }
+        
+        public int getRol(){
+            return Rol;
+        }
+        
+        public void setRol(int rol){
+            Rol = rol;
         }
 	
 	public String toString() {
