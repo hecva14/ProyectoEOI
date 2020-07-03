@@ -4,6 +4,7 @@ public class Carro {
      String producto;
      double precio;
      String descripcion;
+     String foto;
 
     public Carro(String producto, double precio, String descripcion){
 	this.producto = producto;
@@ -22,4 +23,21 @@ public class Carro {
     public double getPrecio(){
         return precio;
     }
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+    
 }
