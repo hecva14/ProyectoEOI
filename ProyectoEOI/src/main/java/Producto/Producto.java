@@ -1,15 +1,20 @@
 package Producto;
 
+import java.io.InputStream;
+
 public class Producto {
-    private String Producto;
-    private double Precio;
-    private String Descripcion;
-    private int Categoria;
-    private String Marca;
-    private String Modelo;
-    private String Referencia;
-    private int Stock;
-    private double Descuento;
+    int idproducto;
+     String Producto;
+     double Precio;
+     String Descripcion;
+     int Categoria;
+     String Marca;
+     String Modelo;
+     String Referencia;
+     int Stock;
+     double Descuento;
+     String foto;
+     InputStream Imagen;
 	
     public Producto() {
 		
@@ -100,6 +105,7 @@ public class Producto {
             Descuento = descuento;
         }
 	
+    @Override
 	public String toString() {
 		return "El Producto es " + Producto 
                         + ", su descripción es " + Descripcion +
@@ -109,5 +115,21 @@ public class Producto {
                         ", su modelo es " + Modelo +
                         ", su referencia es " + Referencia; 
         }
+
+    public void setImagen(InputStream Imagen) {
+        this.Imagen=Imagen;
+    }
+
+    public void setIdproducto(int idproducto) {
+        this.idproducto=idproducto;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto=foto;
+    }
     
 }
