@@ -1,3 +1,12 @@
 web\ServletProyectoEOI.class
+web\registrarProducto.class
+Direcciones\Direcciones.class
+web\Carrito.class
+web\ServletCarrito.class
 Conexion\Conexion.class
 Usuario\Usuario.class
+Carro\Carro.class
+web\ServletRegistro.class
+Producto\Producto.class
+web\Login.class
+Pedidos\Pedidos.class

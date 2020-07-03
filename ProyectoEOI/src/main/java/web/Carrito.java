@@ -1,7 +1,6 @@
 
 package web;
 
-import Carro.Carro;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -48,27 +47,13 @@ public class Carrito extends HttpServlet {
         }
  
  
-  Double precio = Double.parseDouble(req.getParameter("precio"));
-  String descripcion = req.getParameter("descripcion");
- if(req.getParameter("submit").equals("cesta")){
-     if (sesion.isNew())
-{
-	Vector carro = new Vector();
-	carro.addElement(new Carro(articulo, precio,descripcion));
-	sesion.setAttribute("miCarro", carro);
-} else {
-	Vector carro = (Vector)(sesion.getAttribute("miCarro"));
-	carro.addElement(new Carro(articulo, precio,descripcion));
-	sesion.setAttribute("miCarro", carro);
-}
+  
    
     
 }
 }
  
     
-    
-}
 
 /*  if (req.getParameter("submit").equals("mujer")) {
 

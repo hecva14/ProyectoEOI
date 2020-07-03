@@ -2,28 +2,40 @@ package Usuario;
 
 public class Usuario {
     private String Usuario;
+    private String Apellidos;
     private String Password;
     private String Email;
     private int Telefono;
     private int Telefono2;
     private int Rol;
+    private String Direccion;
 	
     public Usuario() {
 		
 	}
-    
-	public Usuario(String usuario, String password, String email, int telefono, int telefono2, int rol) {
+        
+        public Usuario(int rol){
+            Rol = rol;
+        }
+        
+        public Usuario(String direccion){
+            Direccion = direccion;
+        }
+        
+	public Usuario(String apellidos, String direccion, String usuario, String password, String email, int telefono, int telefono2, int rol) {
 		Usuario = usuario;
 		Password = password;
 		Email = email;
 		Telefono = telefono;
                 Telefono2 = telefono2;
                 Rol = rol;
+                Direccion = direccion;
+                Apellidos = apellidos;
 	}
 
 	public String getUsuario(){
 		return Usuario;
-	}
+        }
 	
 	public void setUsuario(String usuario) {
 	    Usuario = usuario;
@@ -76,5 +88,13 @@ public class Usuario {
 			" y su teléfono es " + Telefono
                         + ". Su teléfono secundario es " + Telefono2; 
         }
+
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
+    }
+
+    public void setApellidos(String apellidos) {
+        Apellidos = apellidos;
+    }
     
 }

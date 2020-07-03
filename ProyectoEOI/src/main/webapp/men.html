@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>Kids</title>
     </head>
-    <body class="woman">
+    <body class="men">
         <header class="header">
             <nav class="navegador">
                 <div class="ropa">
@@ -25,41 +25,19 @@
             </nav>
         </header>
         <div class="containerall col-xs-10 col-sm-6 col-md-4">
-           <table class="productall">
+          <table class="productall">
+                <c:forEach var="producto" items="${lista}">
                 <tr class="rows">
-                    <td colspan="2" class="cols">Foto</td>
+                    <td colspan="2" class="cols">Foto poner bien</td>
                 </tr>
                 <tr class="rows">
-                    <td colspan="2" class="coltitulo">Titulo</td>
-                </tr>
-                <tr class="rows">
-                    <td class="colcarrito">Boton carrito</td>
-                    <td class="colprecio"><h3>0,00€</h3></td>
-                </tr>
-            </table>
-             <table class="productall">
-                <tr class="rows">
-                    <td colspan="2" class="cols">Foto</td>
-                </tr>
-                <tr class="rows">
-                    <td colspan="2" class="coltitulo">Titulo</td>
+                    <td colspan="2" class="coltitulo"><c:out value="${ producto.nombre}"></c:out></td>
                 </tr>
                 <tr class="rows">
                     <td class="colcarrito">Boton carrito</td>
-                    <td class="colprecio"><h3>0,00€</h3></td>
+                    <td class="colprecio"><h3><c:out value="${ producto.precio}"></c:out></h3></td>
                 </tr>
-            </table>
-             <table class="productall">
-                <tr class="rows">
-                    <td colspan="2" class="cols">Foto</td>
-                </tr>
-                <tr class="rows">
-                    <td colspan="2" class="coltitulo">Titulo</td>
-                </tr>
-                <tr class="rows">
-                    <td class="colcarrito">Boton carrito</td>
-                    <td class="colprecio"><h3>0,00€</h3></td>
-                </tr>
+                </c:forEach>
             </table>
         </div>
     </body>
