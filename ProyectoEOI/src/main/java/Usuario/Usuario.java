@@ -1,14 +1,15 @@
 package Usuario;
 
 public class Usuario {
-    private String Usuario;
-    private String Apellidos;
-    private String Password;
-    private String Email;
-    private int Telefono;
-    private int Telefono2;
-    private int Rol;
-    private String Direccion;
+     String Usuario;
+     String Apellidos;
+     String Password;
+     String Email;
+     int Telefono;
+     int Telefono2;
+     int Rol;
+     String Direccion;
+     int idUsuario;
 	
     public Usuario() {
 		
@@ -33,6 +34,15 @@ public class Usuario {
                 Apellidos = apellidos;
 	}
 
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+        
 	public String getUsuario(){
 		return Usuario;
         }
@@ -81,13 +91,7 @@ public class Usuario {
             Rol = rol;
         }
 	
-	public String toString() {
-		return "El Usuario se llama " + Usuario 
-                        + ", su contraseña es " + Password +
-			", su email es " + Email + 
-			" y su teléfono es " + Telefono
-                        + ". Su teléfono secundario es " + Telefono2; 
-        }
+	
 
     public void setDireccion(String direccion) {
         Direccion = direccion;
@@ -96,5 +100,19 @@ public class Usuario {
     public void setApellidos(String apellidos) {
         Apellidos = apellidos;
     }
+
+    public String getApellidos() {
+       return Apellidos;
+    }
+
+    public String getDireccion() {
+       return Direccion;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "Usuario=" + Usuario + ", Apellidos=" + Apellidos + ", Password=" + Password + ", Email=" + Email + ", Telefono=" + Telefono + ", Telefono2=" + Telefono2 + ", Rol=" + Rol + ", Direccion=" + Direccion + ", idUsuario=" + idUsuario + '}';
+    }
+    
     
 }
