@@ -71,15 +71,16 @@ public class Conexion {
         
             
     }
-public int consultarLogin(Usuario usuario) throws SQLException {
+public int consultarLogin(String usuario, String password) throws SQLException {
 	    Connection con=null;
+            
+            Usuario user = new Usuario();
 
-	    Usuario user=new Usuario();
 	    String quary="SELECT rol FROM usuario WHERE nombre=? and contrasena=?";
 	    con=getConnection();
 	    PreparedStatement statement = con.prepareStatement(quary);
-            statement.setString(1, usuario.getUsuario());
-            statement.setString(2, usuario.getPassword());
+            statement.setString(1, usuario);
+            statement.setString(2, password);
 	    ResultSet rs = statement.executeQuery();
 
 	    while (rs.next()) {
