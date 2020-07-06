@@ -1,33 +1,72 @@
 package Pedidos;
 
 public class Pedidos {
-    private String Pedido;
-    private double Precio;
-    private int Cantidad;
-    private String Fecha;
-    private boolean Pagado;
-    private double Descuento;
+     int idPedido;
+     String numPedido;
+     int numUsuario;
+     int numProducto;
+     double Precio;
+     int Cantidad;
+     String Fecha;
+     boolean Pagado;
+     double Descuento;
 	
     public Pedidos() {
 		
 	}
+
+    public Pedidos(int idPedido, String numPedido, int numUsuario, int numProducto, double Precio, int Cantidad, String Fecha, boolean Pagado, double Descuento) {
+        this.idPedido = idPedido;
+        this.numPedido = numPedido;
+        this.numUsuario = numUsuario;
+        this.numProducto = numProducto;
+        this.Precio = Precio;
+        this.Cantidad = Cantidad;
+        this.Fecha = Fecha;
+        this.Pagado = Pagado;
+        this.Descuento = Descuento;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
+    }
+
+    public String getNumPedido() {
+        return numPedido;
+    }
+
+    public void setNumPedido(String numPedido) {
+        this.numPedido = numPedido;
+    }
+
+    public int getNumUsuario() {
+        return numUsuario;
+    }
+
+    public void setNumUsuario(int numUsuario) {
+        this.numUsuario = numUsuario;
+    }
+
+    public int getNumProducto() {
+        return numProducto;
+    }
+
+    public void setNumProducto(int numProducto) {
+        this.numProducto = numProducto;
+    }
     
-	public Pedidos(String pedido, double precio, int cantidad,
-                String fecha, boolean pagado, double descuento) {
-                Pedido = pedido;
-		Precio = precio;
-		Cantidad = cantidad;
-		Fecha = fecha;
-		Pagado = pagado;
-                Descuento = descuento;
-	}
+	
         
         public String getPedido(){
-            return Pedido;
+            return numPedido;
         }
         
         public void setPedido(String pedido){
-            Pedido = pedido;
+            numPedido = pedido;
         }
 
 	public double getPrecio(){
@@ -69,11 +108,11 @@ public class Pedidos {
         public void setDescuento(double descuento){
             Descuento = descuento;
         }
+
+    @Override
+    public String toString() {
+        return "Pedidos{" + "idPedido=" + idPedido + ", numPedido=" + numPedido + ", numUsuario=" + numUsuario + ", numProducto=" + numProducto + ", Precio=" + Precio + ", Cantidad=" + Cantidad + ", Fecha=" + Fecha + ", Pagado=" + Pagado + ", Descuento=" + Descuento + '}';
+    }
 	
-	public String toString() {
-		return "El número de Pedido es " + Pedido +
-			", su precio es " + Precio + 
-			", se realizo el día " + Fecha +
-                        " y su estado Pagado es " + Pagado; 
-        }
+   
 }
