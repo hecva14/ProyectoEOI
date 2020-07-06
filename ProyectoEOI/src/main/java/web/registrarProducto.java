@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet( "/ServletRegistroProducto")
+@WebServlet( "/ServletSubirProducto")
 public class registrarProducto extends HttpServlet {
     
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+    
+    protected void processRequest(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         
         
@@ -26,6 +26,7 @@ public class registrarProducto extends HttpServlet {
         int stock = Integer.parseInt(req.getParameter("stock"));
         Double descuento = Double.parseDouble(req.getParameter("descuento"));
         String referencia = req.getParameter("refenrecia");
+        String ruta= req.getParameter("ruta");
        
         Conexion con= new Conexion();
         Producto producto= new Producto();
@@ -38,9 +39,18 @@ public class registrarProducto extends HttpServlet {
          producto.setStock(stock);
          producto.setReferencia(referencia);
          producto.setDescuento(descuento);
+         producto.setFoto(ruta);
         
          System.out.println( producto.toString());
-         con.registrarProducto(producto);
+         
+           boolean resp = con.registrarProducto(producto);
+            if(resp){
+                 System.out.println("producto subido con exito");
+                res.sendRedirect("indiceAdmin.html");
+            }else{
+                System.out.println("producto no subido");
+                res.sendRedirect("subirproducto.html");
+            }
         
         
     
