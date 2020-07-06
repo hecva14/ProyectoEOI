@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Subir producto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form class="" action="/ProyectoEOI/ServletSubirProducto" method="Post"> 
+            <input class="input" name="Nombre" type="text" placeholder="Nombre del producto" required autofocus> 
+            <input class="input" name="Descripción" type="text" placeholder="Descripción del producto" required>
+            <input class="input" name="Precio" type="number" placeholder="Precio del producto" required>
+            <input class="input" name="Categoría" type="number" placeholder="Categoria del producto: 1 = Niño; 2 = Mujer; 3 = Hombre" required>
+            <input class="input" name="Imagen" type="file" placeholder="Imagen del producto" required>
+            <input class="input" name="Marca" type="text" placeholder="Marca del producto" required>
+            <input class="input" name="Modelo" type="text" placeholder="Modelo del producto" required>
+            <input class="input" name="Referencia" type="text" placeholder="Referencia del producto" required>
+            <input class="input" name="Stock" type="number" placeholder="Stock inicial del producto" required>
+            <input class="input" name="Descuento" type="number" placeholder="Descuento del producto">
+            <div class="">
+                <input class="boton_submit" type="submit" value="SUBIR">
+            </div>              
+        </form>
+    </body>
+</html>
