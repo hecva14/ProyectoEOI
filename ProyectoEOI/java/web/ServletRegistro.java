@@ -32,9 +32,10 @@ public class ServletRegistro  extends HttpServlet{
          user.setEmail(email);
          user.setPassword(contrasena);
          user.setDireccion(direccion);
+         user.setRol(2);
         
          System.out.println( user.toString());
          con.createUsuario(user);
-        
+         res.sendRedirect("login.html");
     }
 }

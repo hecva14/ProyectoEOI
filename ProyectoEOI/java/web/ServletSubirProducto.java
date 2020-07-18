@@ -1,3 +1,4 @@
+
 package web;
 
 import Conexion.Conexion;
@@ -5,42 +6,61 @@ import Producto.Producto;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/ServletSubirProducto")
+@WebServlet( "/ServletSubirProducto")
 public class ServletSubirProducto extends HttpServlet {
+    
+    
     @Override
-     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-     
-     String articulo = req.getParameter("producto");
-     String descripcion = req.getParameter("Descripcion");
-     double precio = Double.parseDouble(req.getParameter("Precio"));
-     int categoria = Integer.parseInt(req.getParameter("Categoria"));
-     //Imagen
-     String marca = req.getParameter("Marca");
-     String modelo = req.getParameter("Modelo");
-     String referencia = req.getParameter("Referencia");
-     int stock = Integer.parseInt(req.getParameter("Stock"));
-     double descuento = Integer.parseInt(req.getParameter("Descuento"));
-
-     Producto producto = new Producto();
-     producto.setProducto(articulo);
-     producto.setDescripcion(descripcion);
-     producto.setPrecio(precio);
-     producto.setCategoria(categoria);
-     //Imagen
-     producto.setMarca(marca);
-     producto.setModelo(modelo);
-     producto.setReferencia(referencia);
-     producto.setStock(stock);
-     producto.setDescuento(descuento);
-    
-     Conexion conexion =new Conexion();
+    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+        String registro=req.getParameter("SUBIR");
         
-     System.out.println( producto.toString());
-     conexion.registrarProducto(producto);
+        String nombre=req.getParameter("Nombre");
+        String descrp= req.getParameter("Descripcion");
+        System.out.println("Precio del producto nuevo"+req.getParameter("precio2"));
+        
+        double precio =Double.parseDouble( req.getParameter("precio2"));
+        int categoria = Integer.parseInt(req.getParameter("Categoria"));
+        String marca= req.getParameter("Marca");
+        String modelo= req.getParameter("Modelo");
+        int stock = Integer.parseInt(req.getParameter("Stock"));
+        Double descuento = Double.parseDouble(req.getParameter("Descuento"));
+        String referencia = req.getParameter("Refenrecia");
+        String ruta= req.getParameter("Imagen");
+       
+        Conexion con= new Conexion();
+        Producto producto= new Producto();
+       
+         producto.setNombre(nombre);
+         producto.setProducto(modelo);
+         producto.setDescripcion(descrp);
+         producto.setPrecio(precio);
+         producto.setCategoria(categoria);
+         producto.setMarca(marca);
+         producto.setStock(stock);
+         producto.setReferencia(referencia);
+         producto.setDescuento(descuento);
+         producto.setFoto(ruta);
+         
+        
+         System.out.println( producto.toString());
+         if(registro!=null){
+             boolean resp = con.registrarProducto(producto);
+            if(resp){
+                 System.out.println("producto subido con exito");
+                res.sendRedirect("indiceAdmin.html");
+            }else{
+                System.out.println("producto no subido");
+                res.sendRedirect("subirproducto.html");
+            }
+        
+         }
+           
+        
     
-     }
-    
+    }
 }
-
