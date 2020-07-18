@@ -90,24 +90,23 @@ public class Usuario {
         public void setRol(int rol){
             Rol = rol;
         }
+        
+	 public void setApellidos(String apellidos) {
+            Apellidos = apellidos;
+        }
 	
-	
 
-    public void setDireccion(String direccion) {
-        Direccion = direccion;
-    }
+        public void setDireccion(String direccion) {
+            Direccion = direccion;
+        }
 
-    public void setApellidos(String apellidos) {
-        Apellidos = apellidos;
-    }
+        public String getApellidos() {
+            return Apellidos;
+        }
 
-    public String getApellidos() {
-       return Apellidos;
-    }
-
-    public String getDireccion() {
-       return Direccion;
-    }
+        public String getDireccion() {
+            return Direccion;
+        }
 
     @Override
     public String toString() {
