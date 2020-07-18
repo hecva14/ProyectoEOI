@@ -2,6 +2,14 @@ html {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/*En este apartado se realizan los estilos apra los fondos que tiene el elemento body de cada pagina*/
+
+
+.subirProducto{
+    background-image: url("../Images/background.jpeg"); 
+    background-size: cover;
+}
 .login {
     background-image: url("../Images/background6.jpg"); 
     background-size: cover;
@@ -9,12 +17,40 @@ html {
 .registrar {
     background-image: url("../Images/background3.jpg"); 
     background-size: cover;
+    
 }
+.index{
+     background-image: url("../Images/background.jpeg"); 
+    background-size: cover;
+}
+.kids {
+    background-image: url("../Images/backgroundkid1.jpg"); 
+    background-size: cover;
+}
+.woman {
+    background-image: url("../Images/background4.jpg"); 
+    background-size: cover;
+}
+.carro {
+    background-image: url("../Images/background2.jpg"); 
+    background-size: cover;
+}
+.men {
+    background-image: url("../Images/background7.jpg"); 
+    background-size: cover;
+}
+
 .container {
     max-width: 470px;
     height: auto;
+    margin: 10% auto;
     padding-bottom: 2rem;
     background-color: #EFEFEF;
+    
+}
+.container2{
+    max-width: 470px;
+    height: auto;
     margin: 10% auto;
 }
 
@@ -49,8 +85,8 @@ h2 span {
     margin-top: 1rem;
 }
 .input, .boton_submit {
-    background-color: #EFEFEF;
-    padding: .6rem;
+    background-color: #ffffff;
+    padding: 0.8rem;
     margin: .5rem 0;
     border: none;
     border-bottom: solid #c8c8c8 .2rem;
@@ -60,7 +96,7 @@ h2 span {
     background-color: #b8eef5;
 }
 .boton_submit {
-    width: 70%;
+    width: 50%;
     border-bottom: none;
     background-color: #b8eef5;
     color: white;
@@ -77,4 +113,131 @@ h2 span {
 }
 .hyper:hover {
     color: black;
+}
+
+/*Este css incluye todo el apartado del menu de navegacion*/
+.header {
+  background: rgba(0,0,0,0.8);
+  width:100%;
+  position: fixed;
+  z-index:100;
+  margin-bottom: 100px;
+  top: 0px;
+  
+}
+
+.navegador {
+  float: left; 
+}
+ 
+.navegador ul {
+  list-style: none;
+  overflow: hidden;
+}
+ 
+.navegador ul li {
+  float: left;
+  transition: all .3s;
+}
+ 
+.navegador ul li a {
+  display: block; 
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+ 
+.navegador ul li:hover {
+  background: #2fa8f8;
+  
+}
+
+.lidos {
+    margin-left: 600px;
+}
+
+/*Este css incluye todo el cuerpo principal de los productos*/
+
+.containerall {
+    width: 1500px;
+    height: 800px;
+   padding-bottom: 2rem;
+    
+    background: rgba(255,255,255,0.3);
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 6px;
+}
+.mostrarIndice{
+    width:100%;
+  position: fixed;
+  z-index:200;
+  margin-bottom: 100px;
+  top: 100px;
+}
+.subirformulario{
+     margin-top: -1000px;
+      margin-left: 100px;
+}
+.center {
+  display: block;
+  margin-left: 50px;
+  margin-right:10px;
+  
+}
+.productall {
+   /* float: left;*/
+    margin: 20px;
+   /* background: white;*/
+    
+}
+.indiceAdmin{
+     padding-left: 500px;
+     padding-top: -200px;
+}
+
+.carro{
+    width: 1400px;
+    margin: 0 auto;
+}
+.cambioPass{
+     margin-left:500px;
+     margin-top:  -200px;
+}
+.cambioPass{
+    margin-left:700px;
+    margin-top:  -300px;
+}
+.tituloTabla{
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.PrecioTotal{
+  margin-left:700px;
+  margin-top:  -300px;
+}
+.tabla{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+  border: 1px solid blue;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tabla tr:nth-child(even){background-color: #f2f2f2;}
+
+.tabla tr:hover {background-color: #ddd;}
+
+.tabla th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: blue;
+  color: black;
 }

@@ -3,7 +3,7 @@ package Producto;
 import java.io.InputStream;
 
 public class Producto {
-    int idproducto;
+      int idproducto;
      String Producto;
      double Precio;
      String Descripcion;
@@ -15,6 +15,7 @@ public class Producto {
      double Descuento;
      String foto;
      InputStream Imagen;
+     String nombre;
 	
     public Producto() {
 		
@@ -32,6 +33,15 @@ public class Producto {
                 Stock = stock;
                 Descuento = descuento;
 	}
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
         
         public String getProducto(){
             return Producto;
@@ -104,20 +114,11 @@ public class Producto {
         public void setDescuento(double descuento){
             Descuento = descuento;
         }
-	
-    @Override
-	public String toString() {
-		return "El Producto es " + Producto 
-                        + ", su descripción es " + Descripcion +
-			", su precio es " + Precio + 
-			", pertenece a la categoría " + Categoria +
-                        ", su marca es " + Marca +
-                        ", su modelo es " + Modelo +
-                        ", su referencia es " + Referencia; 
-        }
-
-    public void setImagen(InputStream Imagen) {
+          public void setImagen(InputStream Imagen) {
         this.Imagen=Imagen;
+    }
+          public int getIdproducto() {
+              return idproducto;
     }
 
     public void setIdproducto(int idproducto) {
@@ -130,6 +131,23 @@ public class Producto {
 
     public void setFoto(String foto) {
         this.foto=foto;
+    }
+	
+    @Override
+	public String toString() {
+		return "El Producto es " + nombre 
+                        + ", su descripción es " + Descripcion +
+                        ", su id es " + idproducto + 
+			", su precio es " + Precio + 
+			", pertenece a la categoría " + Categoria +
+                        ", su marca es " + Marca +
+                        ", su modelo es " + Modelo +
+                        ".";
+        }
+
+  
+    public InputStream getImagen(){
+        return Imagen;
     }
     
 }
