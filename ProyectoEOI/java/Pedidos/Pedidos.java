@@ -1,8 +1,12 @@
 package Pedidos;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
+
 public class Pedidos {
      int idPedido;
-     String numPedido;
+     int numPedido;
      int numUsuario;
      int numProducto;
      double Precio;
@@ -15,7 +19,7 @@ public class Pedidos {
 		
 	}
 
-    public Pedidos(int idPedido, String numPedido, int numUsuario, int numProducto, double Precio, int Cantidad, String Fecha, boolean Pagado, double Descuento) {
+    public Pedidos(int idPedido, int numPedido, int numUsuario, int numProducto, double Precio, int Cantidad, String Fecha, boolean Pagado, double Descuento) {
         this.idPedido = idPedido;
         this.numPedido = numPedido;
         this.numUsuario = numUsuario;
@@ -35,14 +39,20 @@ public class Pedidos {
         this.idPedido = idPedido;
     }
 
-    public String getNumPedido() {
+    public int getNumPedido() {
         return numPedido;
     }
 
-    public void setNumPedido(String numPedido) {
-        this.numPedido = numPedido;
+    public void numPedido() {
+       Random r =new Random();
+      this.numPedido=r.nextInt(999999);
+		
     }
-
+    
+     public void setNumPedido(int numPedido) {
+         this.numPedido=numPedido;
+         
+     }
     public int getNumUsuario() {
         return numUsuario;
     }
@@ -60,7 +70,7 @@ public class Pedidos {
     }
     
 	
-        
+        /*
         public String getPedido(){
             return numPedido;
         }
@@ -68,7 +78,7 @@ public class Pedidos {
         public void setPedido(String pedido){
             numPedido = pedido;
         }
-
+*/
 	public double getPrecio(){
 		return Precio;
 	}
@@ -89,10 +99,18 @@ public class Pedidos {
             return Fecha;
         }
         
-        public void setFecha(String fecha){
-            Fecha = fecha;
+        public void Fecha(){
+            String formato = "yyyy-MM-dd HH:mm:ss";
+	DateTimeFormatter formateador = DateTimeFormatter.ofPattern(formato);
+	LocalDateTime ahora = LocalDateTime.now();
+        this.Fecha=formateador.format(ahora);
+	
         }
         
+          public void setFecha(String fecha){
+                 this.Fecha=fecha;
+              
+          }
         public boolean getPagado(){
             return Pagado;
         }
@@ -109,6 +127,16 @@ public class Pedidos {
             Descuento = descuento;
         }
 
+        
+        
+        
+        
+        public String fechaHoraActual() {
+	String formato = "yyyy-MM-dd HH:mm:ss";
+	DateTimeFormatter formateador = DateTimeFormatter.ofPattern(formato);
+	LocalDateTime ahora = LocalDateTime.now();
+	return formateador.format(ahora);
+}
     @Override
     public String toString() {
         return "Pedidos{" + "idPedido=" + idPedido + ", numPedido=" + numPedido + ", numUsuario=" + numUsuario + ", numProducto=" + numProducto + ", Precio=" + Precio + ", Cantidad=" + Cantidad + ", Fecha=" + Fecha + ", Pagado=" + Pagado + ", Descuento=" + Descuento + '}';
