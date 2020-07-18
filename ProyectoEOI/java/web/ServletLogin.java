@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet( "/ServletLogin")
 public class ServletLogin extends HttpServlet {
@@ -33,6 +34,8 @@ public class ServletLogin extends HttpServlet {
             user.setRol(con.consultarLogin(user));
             if(user.getRol()==1 || user.getRol()==2){
                 System.out.println("Usuario valido");
+                HttpSession sesion = req.getSession();
+                  sesion.setAttribute("numUsuario", user.getIdUsuario());
                 System.out.println("rol"+user.getRol());
                  if(user.getRol()==1){
                   //redirigir a la pagina de admin
