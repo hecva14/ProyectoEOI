@@ -28,7 +28,7 @@ import="javax.servlet.http.HttpServletResponse"%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <title>indice Administrador</title>
+    <title>Consulta Pedidos</title>
 </head>
     <body class="login">
         <header class="header">
@@ -36,9 +36,9 @@ import="javax.servlet.http.HttpServletResponse"%>
                 <div class="ropa">
                     <ul class="uluno">
                     <li class="liuno"><a href="index.html">Inicio</a></li>
-                    <li class="liuno"><a href="#">Hombre</a></li>
-                    <li class="liuno"><a href="#">Mujer</a></li>
-                    <li class="liuno"><a href="kids.html">Niños</a></li>
+                     <li class="liuno"><a href="MEN.jsp">Hombre</a></li>
+                    <li class="liuno"><a href="WOMAN.jsp" name="mujer">Mujer</a></li>
+                    <li class="liuno"><a href="KIDS.jsp">Niños</a></li>
                     <li class="liuno"><a href="#">Contacto</a></li>
                     <li class="lidos"><a href="login.html">LOG IN</a></li>
                     <li class="litres"><a href="registrar.html">Registrarse</a></li>
@@ -46,24 +46,25 @@ import="javax.servlet.http.HttpServletResponse"%>
                 </div>
             </nav>
         </header>
-            <div class="container">
-              <div class="forma_top">
-               <h2><span>Consultar Pedido</span></h2>
+             <div class="containerall ">
+        
+         <br>
+         <h1 class="tituloTabla" style="color: blueviolet;">Consultar Pedidos</h1>
                 <form class="form_registro" action="/ProyectoEOI/pedidos.jsp" method="post"> 
-                   Ingrese pedido: <input  type="text" class="input"  name="pedido"> 
+                   Ingrese pedido: <input  type="text"  name="pedido" style='width:70px; height:25px'> 
                   <br>
-                 <input  type="submit" name="Mostrarpedido" value="Mostrar pedidos"> 
+                 <input  type="submit" name="Mostrarpedido" value="Mostrar pedidos" style='width:70px; height:25px'> 
                  <br>
-                  <table>
+                   <div class="left">
+                  <table class="tabla">
 	           <tr>
-			<td>numPedido</td>
-                        <td>numUsuario</td>
-                        <td>numProducto</td>
-			<td>Cantidad</td>
-			<td>precio</td>
-			<td>Fecha</td>
-			<td>Pagado</td>
-			<td>Descuento</td>
+			<td>&nbsp;numPedido&nbsp;</td>
+                        <td>&nbsp;numUsuario&nbsp;</td>
+			<td>&nbsp;Cantidad&nbsp;</td>
+			<td>&nbsp;precio&nbsp;</td>
+			<td>&nbsp;&nbsp;Fecha&nbsp;&nbsp;</td>
+			<td>&nbsp;Pagado&nbsp;</td>
+			<td>&nbsp;Descuento&nbsp;</td>
 		  </tr>
 		  <%    
                     String idpedido=request.getParameter("pedido");
@@ -71,20 +72,19 @@ import="javax.servlet.http.HttpServletResponse"%>
                            System.out.println("holaaaa");
                            System.out.println(idpedido);
                      if(idpedido!=null){
-                         System.out.println("holaaaa22");
+                       
                            Conexion con=new Conexion();
                            ArrayList<Pedidos>  pedidos=new ArrayList();
            
 			    try {
 				pedidos=con.consultarPedido(idpedido);
-                                System.out.println("holaaaa33");
+                               
 				for (Pedidos pedido : pedidos) {
                                  %>
                                  <tr> 
                                     
                                      <td><% out.print(pedido.getNumPedido());%></td>
                                       <td><% out.print(pedido.getNumUsuario());%></td>
-                                      <td><% out.print(pedido.getNumProducto()); %></td>
 			              <td><% out.print(pedido.getCantidad());%></td>
 			              <td><% out.print(pedido.getPrecio());%></td>
 			              <td><% out.print(pedido.getFecha());%></td>
@@ -108,7 +108,7 @@ import="javax.servlet.http.HttpServletResponse"%>
              <br>
              <br>
             <a class="hyper" href="indiceAdmin.html">Indice Administrador</a>
-                        
+           </div>          
         </form>
         </div>
        </div> 

@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Cambiar rol</title>
-        <meta charset="UTF-8">
+   <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <title>Cambiar Rol</title>
     </head>
-    <body>
-        <form class="" action="JS validar usuario" method="Post"> 
-            <input class="input" name="IdUsuario" type="number" placeholder="Introduzca el ID de Usuario" required autofocus> 
+    <body class="index">
+        <header class="header">
+            <nav class="navegador">
+                <div class="ropa">
+                    <ul class="uluno">
+                    <li class="liuno"><a href="index.html">Inicio</a></li>
+                   <li class="liuno"><a href="MEN.jsp">Hombre</a></li>
+                    <li class="liuno"><a href="WOMAN.jsp" name="mujer">Mujer</a></li>
+                    <li class="liuno"><a href="KIDS.jsp">Niños</a></li>
+                    <li class="liuno"><a href="#">Contacto</a></li>
+                    <li class="lidos"><a href="login.html" name="Login">LOG IN</a></li>
+                    <li class="litres"><a href="registrar.html" name="Registrar">Registrarse</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+       <div class="cambioPass">
+        <form name="rol" action="/ProyectoEOI/ServletCambiarParametros" method="Post"> 
+            <input class="input" name="IdUsuario" type="text" placeholder="Introduzca el ID de Usuario" required autofocus> 
             <div class="">
                 <input class="boton_submit" type="submit" value="SUBIR">
             </div>              
         </form>
+       </div>
     </body>
 </html>
